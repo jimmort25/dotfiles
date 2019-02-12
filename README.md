@@ -5,7 +5,7 @@
 
 #### Installation
   ```
-  git clone https://github.com/jimmort25/Dotfiles.git ~/.dotfiles
-  cd ~/.dotfiles
+  git clone https://github.com/jimmort25/dotfiles.git ~/dotfiles
+  cd ~/dotfiles
   script/bootstrap
   ```
