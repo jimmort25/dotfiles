@@ -1,0 +1,113 @@
+set nocompatible
+filetype on
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle'
+
+" essentials
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jreybert/vimagit'
+Plugin 'airblade/vim-gitgutter'
+
+" utilities
+Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'Shougo/vimproc'
+Plugin 'FooSoft/vim-argwrap'
+
+" tip of the cap to tim
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-jdaddy'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
+
+" appearance
+Plugin 'mkitt/tabline.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'chrisbra/Colorizer'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'unblevable/quick-scope'
+Plugin 'zeis/vim-kolor'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'vim-airline/vim-airline'
+Plugin 'NLKNguyen/papercolor-theme'
+
+" languages
+Plugin 'moll/vim-node'
+Plugin 'fatih/vim-go'
+Plugin 'hdima/python-syntax'
+Plugin 'raichoo/haskell-vim'
+
+"snippets
+Plugin 'isRuslan/vim-es6'
+Plugin 'bag-man/snipmate-mocha'
+Plugin 'glippi/lognroll-vim'
+call vundle#end()
+
+syntax on
+
+filetype plugin indent on
+colorscheme PaperColor
+set ma
+set background=dark
+set backspace=indent,eol,start
+set noswapfile
+set clipboard=unnamed
+set autochdir
+set nowritebackup
+set nobackup
+set mouse=a
+set number
+set tabstop=2
+set expandtab
+set shiftwidth=2
+set hlsearch
+set ls=2
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set colorcolumn=80
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*.swp,*~,._*
+set backupdir^=~/.vim/_backup//
+set directory^=~/.vim/_temp//
+set clipboard=unnamed
+nnoremap <Leader>ht :GhcModType<cr>
+nnoremap <Leader>htc :GhcModTypeClear<cr>
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+cnoremap fp let @+ = expand('%:p')<cr>
+let $PATH .= (":" . $HOME . "/.cabal/bin" . ":" . $HOME . "/.local/bin")
+let g:rainbow_active = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+let g:notes_directories = ['~/Documents/Notes']
+let g:lightline = {
+  \     'active': {
+  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+  \     }
+  \ }
+let g:instant_markdown_slow = 1
